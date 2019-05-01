@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".BrowserActivity">
+
+    <WebView
+        android:id="@+id/wview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exitbutton">
+
+    </WebView>
+
+    <Button
+        android:id="@+id/exitbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="50dp"
+        android:text="Call/SMS"
+        android:onClick="goBack"
+        app:layout_constraintBottom_toTopOf="@+id/wview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/prevbutton"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="@string/previous"
+        android:onClick="previous"
+        app:layout_constraintBottom_toTopOf="@+id/wview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/searchbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/wview"
+        app:layout_constraintEnd_toStartOf="@+id/gobutton"
+        app:layout_constraintStart_toEndOf="@id/prevbutton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="10dp"
+        android:text="Go"
+        android:onClick="go"
+        app:layout_constraintBottom_toTopOf="@+id/wview"
+        app:layout_constraintEnd_toStartOf="@id/exitbutton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
